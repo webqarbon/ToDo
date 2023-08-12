@@ -1,19 +1,38 @@
-	.list {
-		li {
-			display: flex;
-			align-items: center;
-			padding: 10px 12px;
-      margin-bottom: 5px;
-			cursor: pointer;
+.list {
+	margin-bottom: 30px;
 
-			&.active {
-				border-radius: 4px;
-				background: #fff;
-				box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.05);
+	.badge {
+		position: relative;
+		left: 4px;
+	}
+
+	&__add-button {
+		span,
+		svg {
+			opacity: 0.5;
+		}
+		&:hover {
+			span,
+			svg {
+				opacity: 1;
 			}
 		}
-		i {
-			display: inline-flex;
-			margin-right: 10px;
+	}
+
+	li {
+		display: flex;
+		align-items: center;
+		padding: 10px 12px;
+		cursor: pointer;
+
+		&.active {
+			border-radius: 4px;
+			background: #fff;
+			box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.05);
 		}
 	}
+	i {
+		display: inline-flex;
+		margin-right: 8px;
+	}
+}

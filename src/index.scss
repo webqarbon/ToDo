@@ -6,10 +6,10 @@
 	font-family: 'Roboto', -apple-system, system-ui, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-size: 14px;
 }
 
 .todo {
+	font-size: 14px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -21,11 +21,39 @@
 	border: 1px solid #f4f6f8;
 
 	&__sidebar {
+		box-sizing: border-box;
 		background-color: #f4f6f8;
 		width: 200px;
 		height: 100%;
 		border-right: 1px solid #f1f1f1;
 		padding: 60px 20px;
 	}
+}
 
+.button {
+	border-radius: 4px;
+	background: #4dd599;
+	color: #fff;
+	border: 0;
+	padding: 10px 20px;
+	cursor: pointer;
+	&:hover {
+		background: darken($color: #4dd599, $amount: 5%);
+	}
+	&:active {
+		background: darken($color: #4dd599, $amount: 10%);
+	}
+}
+
+.field {
+	border-radius: 4px;
+	border: 1px solid #efefef;
+	background: #fff;
+	box-sizing: border-box;
+	padding: 8px 12px;
+	width: 100%;
+
+	&:focus {
+		border-color: darken($color: #efefef, $amount: 5%);
+	}
 }
