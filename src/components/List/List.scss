@@ -1,4 +1,5 @@
 .list {
+	$self: &;
 	margin-bottom: 30px;
 
 	.badge {
@@ -24,7 +25,25 @@
 		align-items: center;
 		padding: 10px 12px;
 		cursor: pointer;
+		transition: background-color .15s ease-in-out;
 
+		&:hover #{$self}__remove-icon {
+			opacity: 0.3;
+		}
+		#{$self}__remove-icon {
+			opacity: 0;
+			transition: opacity .15s ease-in-out;
+			&:hover{
+				opacity: 0.8;
+			}
+		}
+
+		span {
+			flex: 1;
+		}
+		&:hover {
+			background: rgba(255, 255, 255, 0.5);
+		}
 		&.active {
 			border-radius: 4px;
 			background: #fff;
