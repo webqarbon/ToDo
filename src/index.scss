@@ -43,16 +43,33 @@
 	color: #fff;
 	border: 0;
 	padding: 10px 20px;
+	font-size: 14px;
 	cursor: pointer;
+
+	
+
 	&:hover {
 		background: darken($color: #4dd599, $amount: 5%);
 	}
 	&:active {
 		background: darken($color: #4dd599, $amount: 10%);
 	}
+	&--grey{
+		background: #F4F6F8;
+		color: #434343;
+
+
+		&:hover{
+			background: darken($color: #F4F6F8, $amount: 3%);
+		}
+		&:active{
+			background: darken($color: #F4F6F8, $amount: 6%);
+		}
+	}
 }
 
 .field {
+	font-size: 14px;
 	border-radius: 4px;
 	border: 1px solid #efefef;
 	background: #fff;
@@ -61,6 +78,6 @@
 	width: 100%;
 
 	&:focus {
-		border-color: darken($color: #efefef, $amount: 5%);
+		border-color: darken($color: #efefef, $amount: 15%);
 	}
 }
