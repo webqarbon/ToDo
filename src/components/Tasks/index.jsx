@@ -7,7 +7,7 @@ import AddTaskForm from './AddTaskForm'
 import './Tasks.scss'
 
 
-const Tasks = ({ list, onEditTitle }) => {
+const Tasks = ({ list, onEditTitle, onAddTask }) => {
 	const editTitle = () => {
 		const newTitle = window.prompt('Название списка', list.name)
 		if (newTitle) {
@@ -57,7 +57,7 @@ const Tasks = ({ list, onEditTitle }) => {
 					</div>
 				))}
 			</div>
-			<AddTaskForm />
+			<AddTaskForm list={list} onAddTask={onAddTask} />
 		</div>
 	)
 }

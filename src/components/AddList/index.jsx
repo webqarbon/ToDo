@@ -29,7 +29,7 @@ const AddList = ({ colors, onAdd }) => {
 			alert('Введите название списка!')
 			return
 		}
-		setIsLoading(true);
+		setIsLoading(true)
 		axios
 			.post('http://localhost:3001/lists', {
 				name: inputValue,
@@ -40,9 +40,13 @@ const AddList = ({ colors, onAdd }) => {
 				const listObj = { ...data, color: { name: color } }
 				onAdd(listObj)
 				onClose()
-			}).finally(()=>{
+			})
+			.catch(() => {
+				alert('Ошибка при добавлении списка!')
+			})
+			.finally(() => {
 				setIsLoading(false)
-			});
+			})
 	}
 
 	return (

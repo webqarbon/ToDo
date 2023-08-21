@@ -6,14 +6,16 @@ import { ReactComponent as ListSvg } from './assets/img/list.svg'
 import axios from 'axios'
 
 function App() {
-	const [lists, setLists] = useState(null);
-	const [colors, setColors] = useState(null);
-	const [activeItem, setActiveItem] = useState(null);
+	const [lists, setLists] = useState(null)
+	const [colors, setColors] = useState(null)
+	const [activeItem, setActiveItem] = useState(null)
 
 	useEffect(() => {
-		axios.get('http://localhost:3001/lists?_expand=color&_embed=tasks').then(({ data }) => {
-			setLists(data)
-		})
+		axios
+			.get('http://localhost:3001/lists?_expand=color&_embed=tasks')
+			.then(({ data }) => {
+				setLists(data)
+			})
 		axios.get('http://localhost:3001/colors').then(({ data }) => {
 			setColors(data)
 		})
@@ -24,13 +26,23 @@ function App() {
 		setLists(newList)
 	}
 
-	const onEditListTitle = (id, title) => {
+	const onAddTask = (listId, taskObj) => {
 		const newList = lists.map(item => {
-			if (item.id === id ){
-				item.name = title;
+			if(item.id === listId){
+				item.tasks = [...item.tasks, taskObj]
 			}
 			return item;
-		});
+		})
+		setLists(newList);
+	}
+
+	const onEditListTitle = (id, title) => {
+		const newList = lists.map(item => {
+			if (item.id === id) {
+				item.name = title
+			}
+			return item
+		})
 		setLists(newList)
 	}
 
@@ -40,6 +52,7 @@ function App() {
 				<List
 					items={[
 						{
+							active: true,
 							icon: <ListSvg className='list__icon' />,
 							name: 'Все задачи',
 						},
@@ -67,6 +80,7 @@ function App() {
 				{lists && activeItem && (
 					<Tasks
 						list={activeItem}
+						onAddTask={onAddTask}
 						onEditTitle={onEditListTitle}
 					/>
 				)}
