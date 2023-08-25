@@ -15,8 +15,8 @@
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	width: 750px;
-	height: 530px;
+	width: calc(100vw - 100px);
+	height: calc(100vh - 100px);
 	box-shadow: 0px 0px 20px 0px #dcdcdc;
 	border-radius: 10px;
 	border: 1px solid #f4f6f8;
@@ -24,7 +24,7 @@
 	&__sidebar {
 		box-sizing: border-box;
 		background-color: #f4f6f8;
-		width: 200px;
+		min-width: 200px;
 		height: 100%;
 		border-right: 1px solid #f1f1f1;
 		padding: 60px 20px;
@@ -32,10 +32,9 @@
 	&__tasks {
 		flex: 1;
 		padding: 60px;
+		overflow: auto;
 	}
 }
-
-
 
 .button {
 	border-radius: 4px;
@@ -46,8 +45,6 @@
 	font-size: 14px;
 	cursor: pointer;
 
-	
-
 	&:hover {
 		background: darken($color: #4dd599, $amount: 5%);
 	}
@@ -55,20 +52,18 @@
 		background: darken($color: #4dd599, $amount: 10%);
 	}
 
-	&:disabled{
+	&:disabled {
 		background: #d8d8d8;
-		
 	}
-	&--grey{
-		background: #F4F6F8;
+	&--grey {
+		background: #f4f6f8;
 		color: #434343;
 
-
-		&:hover{
-			background: darken($color: #F4F6F8, $amount: 3%);
+		&:hover {
+			background: darken($color: #f4f6f8, $amount: 3%);
 		}
-		&:active{
-			background: darken($color: #F4F6F8, $amount: 6%);
+		&:active {
+			background: darken($color: #f4f6f8, $amount: 6%);
 		}
 	}
 }

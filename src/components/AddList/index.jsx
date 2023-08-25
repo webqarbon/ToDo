@@ -37,7 +37,7 @@ const AddList = ({ colors, onAdd }) => {
 			})
 			.then(({ data }) => {
 				const color = colors.filter(c => c.id === selectedColor)[0].name
-				const listObj = { ...data, color: { name: color } }
+				const listObj = { ...data, color, tasks: []}
 				onAdd(listObj)
 				onClose()
 			})
