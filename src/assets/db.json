@@ -24,10 +24,14 @@
       "id": 5,
       "name": "Личное",
       "colorId": 1
+    },
+    {
+      "name": "test",
+      "colorId": 8,
+      "id": 6
     }
   ],
-  "tasks": [
-  ],
+  "tasks": [],
   "colors": [
     {
       "id": 1,
